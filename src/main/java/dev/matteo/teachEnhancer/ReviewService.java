@@ -22,8 +22,6 @@ public class ReviewService {
                 .apply(new Update().push("reviewIds").value(review))
                 .first();
 
-        // test comment
-
         return review;
     }
 }
