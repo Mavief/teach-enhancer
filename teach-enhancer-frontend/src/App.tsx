@@ -4,6 +4,7 @@ import {useState, useEffect} from "react";
 import Layout from "./components/Layout";
 import {Routes, Route} from "react-router-dom";
 import Home from "./components/home/Home";
+import {TasksWrapper} from "./features/tasks/TasksWrapper";
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />} >
-          <Route path="/" element={<Home enhancements={enhancements} />} />
+          <Route path="tasks" element={<TasksWrapper/>} />
         </Route>
       </Routes>
     </div>
@@ -38,3 +39,5 @@ function App() {
 }
 
 export default App;
+
+//<Route path="/" element={<Home enhancements={enhancements} />} />
