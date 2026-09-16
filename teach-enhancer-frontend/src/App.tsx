@@ -1,10 +1,11 @@
-import './App.css';
+import './App.scss';
 import api from './api/axiosConfig';
 import {useState, useEffect} from "react";
 import Layout from "./components/Layout";
 import {Routes, Route} from "react-router-dom";
 import Home from "./components/home/Home";
 import {TasksWrapper} from "./features/tasks/TasksWrapper";
+import SiteWrapper from "./components/site-wrapper/SiteWrapper";
 
 function App() {
 
@@ -31,7 +32,11 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />} >
-          <Route path="tasks" element={<TasksWrapper/>} />
+          <Route element={<SiteWrapper/>}>
+            <Route index element={<Home />} />
+            <Route path="home" element={<Home />} />
+            <Route path="tasks" element={<TasksWrapper/>} />
+          </Route>
         </Route>
       </Routes>
     </div>

@@ -1,14 +1,12 @@
 import React from "react";
-import Hero from "../hero/Hero";
-import {Todos} from "../../features/todos/components/Todos";
+import {Button} from "@mui/material";
 
-const Home  = ({enhancements}) => {
+
+const Home  = () => {
     return (
         <div>
             <h1>Welcome to Teach Enhancer</h1>
             <p>This is the home page of the Teach Enhancer application.</p>
-            <Hero enhancements={enhancements}></Hero>
-            <Todos></Todos>
         </div>
     );
 }

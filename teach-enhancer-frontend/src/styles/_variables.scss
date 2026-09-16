@@ -1,0 +1,428 @@
+// ==========================================
+// Household Organizer — Global Theme
+// ==========================================
+
+// ---------- Colors ----------
+
+$color-primary: #5f8d72;
+$color-primary-dark: #3f6650;
+$color-primary-light: #dce9df;
+
+$color-secondary: #e8dfd0;
+$color-secondary-dark: #cfc2ad;
+
+$color-background: #f8f7f3;
+$color-surface: #ffffff;
+$color-header: $color-surface;
+$color-surface-alt: #f1f3ef;
+
+$color-text: #26332c;
+$color-text-secondary: #718078;
+$color-text-light: #9aa59f;
+
+$color-border: #e4e8e4;
+$color-border-dark: #ccd3ce;
+
+$color-accent: #d98268;
+$color-accent-light: #f4ddd6;
+
+$color-success: #72a67e;
+$color-success-light: #e0eee2;
+
+$color-warning: #e5a84b;
+$color-warning-light: #f8ecd4;
+
+$color-error: #d96c6c;
+$color-error-light: #f5dcdc;
+
+
+// ---------- Typography ----------
+
+$font-family-base:
+        "Inter",
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+$font-size-xs: 0.75rem;   // 12px
+$font-size-sm: 0.875rem;  // 14px
+$font-size-md: 1rem;      // 16px
+$font-size-lg: 1.125rem;  // 18px
+$font-size-xl: 1.5rem;    // 24px
+$font-size-2xl: 2rem;     // 32px
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+
+// ---------- Spacing ----------
+
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+
+
+// ---------- Border Radius ----------
+
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+$radius-round: 999px;
+
+
+// ---------- Shadows ----------
+
+$shadow-sm:
+        0 1px 3px rgba(38, 51, 44, 0.08);
+
+$shadow-md:
+        0 4px 12px rgba(38, 51, 44, 0.1);
+
+$shadow-lg:
+        0 8px 24px rgba(38, 51, 44, 0.12);
+
+
+// ---------- Transitions ----------
+
+$transition-fast: 150ms ease;
+$transition-normal: 250ms ease;
+$transition-slow: 350ms ease;
+
+
+// ==========================================
+// Global Styles
+// ==========================================
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    background-color: $color-background;
+    color: $color-text;
+    font-family: $font-family-base;
+    font-size: $font-size-md;
+    line-height: 1.5;
+}
+
+
+// ==========================================
+// Typography
+// ==========================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    color: $color-text;
+    font-weight: $font-weight-semibold;
+}
+
+h1 {
+    font-size: $font-size-2xl;
+}
+
+h2 {
+    font-size: $font-size-xl;
+}
+
+h3 {
+    font-size: $font-size-lg;
+}
+
+p {
+    margin: 0;
+}
+
+.text-muted {
+    color: $color-text-secondary;
+}
+
+.text-light {
+    color: $color-text-light;
+}
+
+
+// ==========================================
+// Buttons
+// ==========================================
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+
+    padding: 0.65rem 1.1rem;
+
+    border: none;
+    border-radius: $radius-md;
+
+    font-family: inherit;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+
+    cursor: pointer;
+
+    transition:
+            background-color $transition-fast,
+            box-shadow $transition-fast,
+            transform $transition-fast;
+
+    &:hover {
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    &--primary {
+        background-color: $color-primary;
+        color: white;
+
+        &:hover {
+            background-color: $color-primary-dark;
+            box-shadow: $shadow-sm;
+        }
+    }
+
+    &--secondary {
+        background-color: $color-secondary;
+        color: $color-text;
+
+        &:hover {
+            background-color: $color-secondary-dark;
+        }
+    }
+
+    &--accent {
+        background-color: $color-accent;
+        color: white;
+
+        &:hover {
+            background-color: darken($color-accent, 8%);
+        }
+    }
+
+    &--ghost {
+        background-color: transparent;
+        color: $color-primary;
+
+        &:hover {
+            background-color: $color-primary-light;
+        }
+    }
+}
+
+
+// ==========================================
+// Cards
+// ==========================================
+
+.card {
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-lg;
+    padding: $spacing-lg;
+
+    box-shadow: $shadow-sm;
+
+    transition:
+            box-shadow $transition-normal,
+            transform $transition-normal;
+
+    &:hover {
+        box-shadow: $shadow-md;
+    }
+
+    &--interactive {
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+}
+
+
+// ==========================================
+// Inputs
+// ==========================================
+
+.input {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+
+    background-color: $color-surface;
+
+    border: 1px solid $color-border-dark;
+    border-radius: $radius-md;
+
+    color: $color-text;
+    font-family: inherit;
+    font-size: $font-size-md;
+
+    outline: none;
+
+    transition:
+            border-color $transition-fast,
+            box-shadow $transition-fast;
+
+    &::placeholder {
+        color: $color-text-light;
+    }
+
+    &:focus {
+        border-color: $color-primary;
+
+        box-shadow:
+                0 0 0 3px rgba(95, 141, 114, 0.15);
+    }
+
+    &:disabled {
+        background-color: $color-surface-alt;
+        cursor: not-allowed;
+    }
+}
+
+
+// ==========================================
+// Status
+// ==========================================
+
+.status {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0.25rem 0.6rem;
+
+    border-radius: $radius-round;
+
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+
+    &--success {
+        background-color: $color-success-light;
+        color: $color-primary-dark;
+    }
+
+    &--warning {
+        background-color: $color-warning-light;
+        color: darken($color-warning, 25%);
+    }
+
+    &--error {
+        background-color: $color-error-light;
+        color: darken($color-error, 20%);
+    }
+
+    &--info {
+        background-color: $color-primary-light;
+        color: $color-primary-dark;
+    }
+}
+
+
+// ==========================================
+// Checkbox
+// ==========================================
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+
+    accent-color: $color-primary;
+
+    cursor: pointer;
+}
+
+
+// ==========================================
+// Links
+// ==========================================
+
+a {
+    color: $color-primary;
+    text-decoration: none;
+
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $color-primary-dark;
+    }
+}
+
+
+// ==========================================
+// Utility Classes
+// ==========================================
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-sm {
+    gap: $spacing-sm;
+}
+
+.gap-md {
+    gap: $spacing-md;
+}
+
+.gap-lg {
+    gap: $spacing-lg;
+}
+
+
+// ==========================================
+// Scrollbar
+// ==========================================
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: $color-background;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $color-border-dark;
+    border-radius: $radius-round;
+
+    &:hover {
+        background: $color-text-light;
+    }
+}
